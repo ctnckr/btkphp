@@ -37,18 +37,71 @@
         <div class="card mb-3">
             <div class="row">
                 <div class="col-3">
-                    <img src="img/Php.png" alt="" class="img-fluid rounded-start">
+                    <img src="img/<?php echo $kurs1_resim; ?>" alt="" class="img-fluid rounded-start">
                 </div>
                 <div class="col-9">
                     <div class="card-body">
-                        <h5 class="card-title">PHP Kursu</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam accusantium explicabo nemo repudiandae ipsum unde assumenda laudantium sit, deserunt fugiat numquam eveniet culpa tenetur quod fuga maxime aspernatur! Rerum, quidem!</p>
+                        <h5 class="card-title"><?php echo $kurs1_baslik; ?></h5>
+                        <p class="card-text"><?php echo $kurs1_altBaslik; ?></p>
+                        <p> 
+                            <span class="badge rounded-pill text-bg-primary">
+                                Beğeni: <?php echo $kurs1_begeniSayisi; ?>        
+                            </span>
+                            <span class="badge rounded-pill text-bg-danger">
+                                Yorum: <?php echo $kurs1_yorumSayisi; ?>        
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-3">
+                    <img src="img/<?php echo $kurs2_resim; ?>" alt="" class="img-fluid rounded-start">
+                </div>
+                <div class="col-9">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $kurs2_baslik; ?></h5>
+                        <p class="card-text"><?php echo $kurs2_altBaslik; ?></p>
+                        <p> 
+                            <span class="badge rounded-pill text-bg-primary">
+                                Beğeni: <?php echo $kurs2_begeniSayisi; ?>        
+                            </span>
+                            <span class="badge rounded-pill text-bg-danger">
+                                Yorum: <?php echo $kurs2_yorumSayisi; ?>        
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-3">
+                    <img src="img/<?php echo $kurs3_resim; ?>" alt="" class="img-fluid rounded-start">
+                </div>
+                <div class="col-9">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $kurs3_baslik; ?></h5>
+                        <p class="card-text"><?php echo $kurs3_altBaslik; ?></p>
+                        <p> 
+                            <span class="badge rounded-pill text-bg-primary">
+                                Beğeni: <?php echo $kurs3_begeniSayisi; ?>        
+                            </span>
+                            <span class="badge rounded-pill text-bg-danger">
+                                Yorum: <?php echo $kurs3_yorumSayisi; ?>        
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
 
     </div>
 
