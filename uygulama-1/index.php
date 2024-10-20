@@ -1,5 +1,25 @@
 <?php
-$kurs1_baslik = 
+    $kurs1_baslik = "Php Kursu";
+    $kurs1_altBaslik = "Sıfırdan ileri seviye Php ile web geliştirme";
+    $kurs1_resim = "Php.png";
+    $kurs1_yayinTarihi = "01.01.2023";
+    $kurs1_yorumSayisi = "200";
+    $kurs1_begeniSayisi = "300";
+
+    $kurs2_baslik = "Python Kursu";
+    $kurs2_altBaslik = "Sıfırdan ileri seviye Python programlama";
+    $kurs2_resim = "Python.png";
+    $kurs2_yayinTarihi = "01.01.2023";
+    $kurs2_yorumSayisi = "300";
+    $kurs2_begeniSayisi = "400";
+
+    $kurs3_baslik = "Node.js Kursu";
+    $kurs3_altBaslik = "Sıfırdan ileri seviye Node.js ile web geliştirme";
+    $kurs3_resim = "Nodejs.png";
+    $kurs3_yayinTarihi = "01.01.2023";
+    $kurs3_yorumSayisi = "500";
+    $kurs3_begeniSayisi = "300";
+
 ?>
 
 <!DOCTYPE html>
