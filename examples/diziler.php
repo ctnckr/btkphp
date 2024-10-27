@@ -19,6 +19,5 @@
     echo $sayilar[1]."<br>";
     echo $sayilar[4]."<br>";
 
-    //home branch ile commit denemesi
 
 ?>
