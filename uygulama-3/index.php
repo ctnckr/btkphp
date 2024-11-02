@@ -1,40 +1,60 @@
 <?php
     const title = "Popüler Kurslar";
 
-    $kategoriler = array("Programlama","Web Geliştirme","Veri Analizi");
+    $kategoriler = array("Programlama","Web Geliştirme","Veri Analizi","Ofis Uygulamaları");
 
-    $kurs1_baslik = "Php Kursu";
-    $kurs1_altBaslik = "Sıfırdan ileri seviye Php ile web geliştirme";
-    $kurs1_resim = "Php.png";
-    $kurs1_yayinTarihi = "01.01.2023";
-    $kurs1_yorumSayisi = "200";
-    $kurs1_begeniSayisi = "300";
+    sort($kategoriler);
 
-    $kurs2_baslik = "Python Kursu";
-    $kurs2_altBaslik = "Sıfırdan ileri seviye Python programlama";
-    $kurs2_resim = "Python.png";
-    $kurs2_yayinTarihi = "01.01.2023";
-    $kurs2_yorumSayisi = "300";
-    $kurs2_begeniSayisi = "400";
+    $kurslar = array(
+        "1"=>array(
+            "baslik" => "Php Kursu",
+            "altBaslik" => "Sıfırdan ileri seviye Php ile web geliştirme",
+            "resim" => "1.png",
+            "yayinTarihi" => "01.01.2023",
+            "yorumSayisi" => "100",
+            "begeniSayisi" => "200"
+        ),
+        "2"=>array(
+            "baslik" => "Python Kursu",
+            "altBaslik" => "Sıfırdan ileri seviye Python programlama",
+            "resim" => "2.png",
+            "yayinTarihi" => "01.01.2023",
+            "yorumSayisi" => "100",
+            "begeniSayisi" => "200"
+        ),
+        "3"=>array(
+            "baslik" => "Node.js Kursu",
+            "altBaslik" => "Sıfırdan ileri seviye Node.js ile web geliştirme",
+            "resim" => "3.png",
+            "yayinTarihi" => "01.01.2023",
+            "yorumSayisi" => "100",
+            "begeniSayisi" => "200"
+        ),
+    );
 
-    $kurs3_baslik = "Node.js Kursu";
-    $kurs3_altBaslik = "Sıfırdan ileri seviye Node.js ile web geliştirme";
-    $kurs3_resim = "Nodejs.png";
-    $kurs3_yayinTarihi = "01.01.2023";
-    $kurs3_yorumSayisi = "500";
-    $kurs3_begeniSayisi = "300";
+    $yeni_film = array(
+            "baslik" => "Django Kursu",
+            "altBaslik" => "Sıfırdan ileri seviye Django ile programlama",
+            "resim" => "4.png",
+            "yayinTarihi" => "01.01.2023",
+            "yorumSayisi" => "100",
+            "begeniSayisi" => "200"
+    );
 
-    $kurs1_altBaslik = ucfirst(strtolower($kurs1_altBaslik));
-    $kurs2_altBaslik = ucfirst(strtolower($kurs2_altBaslik));
-    $kurs3_altBaslik = ucfirst(strtolower($kurs3_altBaslik));
+    $kurslar["4"] = $yeni_film;
+
+    $kurs1_altBaslik = ucfirst(strtolower($kurslar["1"]["altBaslik"]));
+    $kurs2_altBaslik = ucfirst(strtolower($kurslar["2"]["altBaslik"]));
+    $kurs3_altBaslik = ucfirst(strtolower($kurslar["3"]["altBaslik"]));
 
     $kurs1_altBaslik = substr($kurs1_altBaslik, 0, 50)."...";
     $kurs2_altBaslik = substr($kurs2_altBaslik, 0, 50)."...";
     $kurs3_altBaslik = substr($kurs3_altBaslik, 0, 50)."...";
 
-    $kurs1_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurs1_baslik));
-    $kurs2_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurs2_baslik));
-    $kurs3_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurs3_baslik));
+    $kurs1_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurslar["1"]["baslik"]));
+    $kurs2_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurslar["2"]["baslik"]));
+    $kurs3_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurslar["3"]["baslik"]));
+    $kurs4_url = str_replace([" ","ç","@",".","ö","ş"],["-","c","","-","o","s"],strtolower($kurslar["4"]["baslik"]));
 
 ?>
 
@@ -54,30 +74,115 @@
         <div class="row">
             <div class="col-3">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item action"><?php echo $kategoriler[0]?></a>    
+                    <a href="#" class="list-group-item list-group-item action active"><?php echo $kategoriler[0]?></a>    
+                    <a href="#" class="list-group-item list-group-item action"><?php echo $kategoriler[1]?></a>    
+                    <a href="#" class="list-group-item list-group-item action"><?php echo $kategoriler[2]?></a>    
+                    <a href="#" class="list-group-item list-group-item action"><?php echo $kategoriler[3]?></a>    
                 </div>
             </div>
             <div class="col-9">
                 <h1 class="mb-3"><?php echo title; ?></h1>
+                <p class="lead">
+                    <?php echo count($kategoriler) ?> kategoride <?php echo count($kurslar) ?> kurs listelenmiştir
+                </p>
+                
                 <div class="card mb-3">
                     <div class="row">
                         <div class="col-4">
-                            <img src="img/<?php echo $kurs1_resim; ?>" alt="" class="img-fluid rounded-start">
+                            <img src="img/<?php echo $kurslar["1"]["resim"]; ?>" alt="" class="img-fluid rounded-start">
                         </div>
                         <div class="col-8">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <a href="<?php echo $kurs1_url; ?>">
-                                        <?php echo $kurs1_baslik; ?>
+                                        <?php echo $kurslar["1"]["baslik"]; ?>
                                     </a>
                                 </h5>
-                                <p class="card-text"><?php echo $kurs1_altBaslik; ?></p>
+                                <p class="card-text"><?php echo $kurslar["1"]["altBaslik"]; ?></p>
                                 <p> 
                                     <span class="badge rounded-pill text-bg-primary">
-                                        Beğeni: <?php echo $kurs1_begeniSayisi; ?>        
+                                        Beğeni: <?php echo $kurslar["1"]["begeniSayisi"]; ?>        
                                     </span>
                                     <span class="badge rounded-pill text-bg-danger">
-                                        Yorum: <?php echo $kurs1_yorumSayisi; ?>        
+                                        Yorum: <?php echo $kurslar["1"]["yorumSayisi"]; ?>        
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="img/<?php echo $kurslar["2"]["resim"]; ?>" alt="" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="<?php echo $kurs2_url; ?>">
+                                        <?php echo $kurslar["2"]["baslik"]; ?>
+                                    </a>
+                                </h5>
+                                <p class="card-text"><?php echo $kurslar["2"]["altBaslik"]; ?></p>
+                                <p> 
+                                    <span class="badge rounded-pill text-bg-primary">
+                                        Beğeni: <?php echo $kurslar["2"]["begeniSayisi"]; ?>        
+                                    </span>
+                                    <span class="badge rounded-pill text-bg-danger">
+                                        Yorum: <?php echo $kurslar["2"]["yorumSayisi"]; ?>        
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="img/<?php echo $kurslar["3"]["resim"]; ?>" alt="" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="<?php echo $kurs3_url; ?>">
+                                        <?php echo $kurslar["3"]["baslik"]; ?>
+                                    </a>
+                                </h5>
+                                <p class="card-text"><?php echo $kurslar["3"]["altBaslik"]; ?></p>
+                                <p> 
+                                    <span class="badge rounded-pill text-bg-primary">
+                                        Beğeni: <?php echo $kurslar["3"]["begeniSayisi"]; ?>        
+                                    </span>
+                                    <span class="badge rounded-pill text-bg-danger">
+                                        Yorum: <?php echo $kurslar["3"]["yorumSayisi"]; ?>        
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="img/<?php echo $kurslar["4"]["resim"]; ?>" alt="" class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="<?php echo $kurs4_url; ?>">
+                                        <?php echo $kurslar["4"]["baslik"]; ?>
+                                    </a>
+                                </h5>
+                                <p class="card-text"><?php echo $kurslar["4"]["altBaslik"]; ?></p>
+                                <p> 
+                                    <span class="badge rounded-pill text-bg-primary">
+                                        Beğeni: <?php echo $kurslar["4"]["begeniSayisi"]; ?>        
+                                    </span>
+                                    <span class="badge rounded-pill text-bg-danger">
+                                        Yorum: <?php echo $kurslar["4"]["yorumSayisi"]; ?>        
                                     </span>
                                 </p>
                             </div>
