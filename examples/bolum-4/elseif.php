@@ -21,5 +21,5 @@
         echo "iyi akşamlar";
     }
 
-
+phpinfo();
 ?>
